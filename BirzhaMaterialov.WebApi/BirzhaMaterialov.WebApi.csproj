@@ -11,4 +11,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BirzhaMaterialov.Application\BirzhaMaterialov.Application.csproj" />
+    <ProjectReference Include="..\BirzhaMaterialov.Domain\BirzhaMaterialov.Domain.csproj" />
+    <ProjectReference Include="..\BirzhaMaterialov.Persistance\BirzhaMaterialov.Persistance.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,5 +1,6 @@
 using BirzhaMaterialov.Application;
 using BirzhaMaterialov.Persistance;
+using BirzhaMaterialov.Persistance.Initializer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,16 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
+var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+using (var scope = scopeFactory.CreateScope())
+{
+    var dbInitializer = scope.ServiceProvider.GetService<IDbInitializer>();
+    if (dbInitializer != null)
+    {
+        dbInitializer.Initialize();
+    }
 }
 
 app.UseHttpsRedirection();
