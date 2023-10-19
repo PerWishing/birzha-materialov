@@ -12,6 +12,7 @@ namespace BirzhaMaterialov.Persistance.Initializer
             this._scopeFactory = scopeFactory;
         }
 
+        //Creates db without tables, first migration must been created by console
         public void Initialize()
         {
             using (var serviceScope = _scopeFactory.CreateScope())
