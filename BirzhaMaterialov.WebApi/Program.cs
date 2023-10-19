@@ -1,9 +1,11 @@
+using BirzhaMaterialov.Application;
 using BirzhaMaterialov.Persistance;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var configuration = builder.Configuration;
 
+builder.Services.AddApplication();
 builder.Services.AddPersistance(configuration);
 
 builder.Services.AddControllers();
