@@ -11,6 +11,7 @@ namespace BirzhaMaterialov.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Produces("application/json")]
     public class SellerController : BaseController
     {
         [HttpGet]
