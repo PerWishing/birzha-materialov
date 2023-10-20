@@ -11,8 +11,8 @@ namespace BirzhaMaterialov.Application.Materials.Commands.UpdateMaterial
     {
         public UpdateMaterialCommandValidator()
         {
-            RuleFor(createMaterialCommand => createMaterialCommand.Name).NotEmpty();
-            RuleFor(createMaterialCommand => createMaterialCommand.Price).GreaterThanOrEqualTo(0);
+            RuleFor(updateMaterialCommand => updateMaterialCommand.Name).NotEmpty();
+            RuleFor(updateMaterialCommand => updateMaterialCommand.Price).GreaterThanOrEqualTo(0);
         }
     }
 }
