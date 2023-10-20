@@ -1,5 +1,6 @@
 ﻿using BirzhaMaterialov.Application.Common.Exceptions;
 using BirzhaMaterialov.Application.Interfaces;
+using BirzhaMaterialov.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -26,7 +27,7 @@ namespace BirzhaMaterialov.Application.Materials.Queries.GetMaterial
 
             if (entity == null)
             {
-                throw new NotFoundException(nameof(entity), request.Id);
+                throw new NotFoundException(nameof(Material), request.Id);
             }
 
             var materialVm = new MaterialVm

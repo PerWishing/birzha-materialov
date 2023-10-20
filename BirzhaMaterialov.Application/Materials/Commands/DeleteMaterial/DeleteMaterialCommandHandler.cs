@@ -1,6 +1,7 @@
 ﻿using BirzhaMaterialov.Application.Common.Exceptions;
 using BirzhaMaterialov.Application.Interfaces;
 using BirzhaMaterialov.Application.Sellers.Commands.DeleteSeller;
+using BirzhaMaterialov.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -27,7 +28,7 @@ namespace BirzhaMaterialov.Application.Materials.Commands.DeleteMaterial
 
             if (entity == null)
             {
-                throw new NotFoundException(nameof(entity), request.Id);
+                throw new NotFoundException(nameof(Material), request.Id);
             }
 
             _dbContext.Materials.Remove(entity);
