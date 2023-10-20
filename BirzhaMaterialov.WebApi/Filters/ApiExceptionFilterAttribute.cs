@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace BirzhaMaterialov.WebApi.Filters
 {
+    /// <summary>
+    /// Attribute for handling our custom exceptions, which was thrown at controllers.
+    /// </summary>
     public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
     {
         private readonly IDictionary<Type, Action<ExceptionContext>> _exceptionHandlers;

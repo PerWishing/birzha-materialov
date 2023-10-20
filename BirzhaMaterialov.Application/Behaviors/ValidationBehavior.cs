@@ -8,6 +8,12 @@ using System.Threading.Tasks;
 
 namespace BirzhaMaterialov.Application.Behaviors
 {
+    /// <summary>
+    /// Validation class for adding in MediatR pipeline. 
+    /// Collect all validators of commands, throws ValidationException if there is any validation errors.
+    /// </summary>
+    /// <typeparam name="TRequest"></typeparam>
+    /// <typeparam name="TResponse"></typeparam>
     public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
      where TRequest : notnull
     {

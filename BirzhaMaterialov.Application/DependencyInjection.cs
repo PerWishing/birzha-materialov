@@ -13,6 +13,11 @@ namespace BirzhaMaterialov.Application
 {
     public static class DependencyInjection
     {
+        /// <summary>
+        /// Registers Application layer services. 
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());

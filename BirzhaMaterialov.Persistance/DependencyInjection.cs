@@ -12,6 +12,12 @@ namespace BirzhaMaterialov.Persistance
 {
     public static class DependencyInjection
     {
+        /// <summary>
+        /// Registers Persistance layer services.
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
+        /// <returns></returns>
         public static IServiceCollection AddPersistance(this IServiceCollection services, IConfiguration configuration)
         {
             var connectionString = configuration["PgConnection"];

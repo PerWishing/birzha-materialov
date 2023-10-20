@@ -51,7 +51,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+//Recurring Hangfire job. Updates materials prices everyday at 8 am. 
 RecurringJob.AddOrUpdate<HangfireService>(x => x.UpdateMaterialsPrices(), "00 8 * * *", TimeZoneInfo.Local);
 
 app.Run();

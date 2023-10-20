@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BirzhaMaterialov.WebApi.Services
 {
+    /// <summary>
+    /// Service for Application command and queries execution by Hangfire jobs.
+    /// </summary>
     public class HangfireService
     {
         private IMediator? _mediator;
