@@ -52,6 +52,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-RecurringJob.AddOrUpdate<HangfireService>(x => x.SetUpdateDbEveryDay(), Cron.Minutely);
+RecurringJob.AddOrUpdate<HangfireService>(x => x.UpdateMaterialsPrices(), "00 8 * * *", TimeZoneInfo.Local);
 
 app.Run();

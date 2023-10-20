@@ -1,4 +1,5 @@
-﻿using BirzhaMaterialov.Application.Materials.Queries.GetMaterials;
+﻿using BirzhaMaterialov.Application.Materials.Commands.UpdateMaterialsPrices;
+using BirzhaMaterialov.Application.Materials.Queries.GetMaterials;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,11 +13,10 @@ namespace BirzhaMaterialov.WebApi.Services
         {
             _mediator = mediator;
         }
-        //test
-        public void SetUpdateDbEveryDay()
+
+        public void UpdateMaterialsPrices()
         {
-            var vm = _mediator!.Send(new GetMaterialsQuery()).GetAwaiter().GetResult();
-            Console.WriteLine($"Count: {vm.Materials!.Count}");
+            _mediator!.Send(new UpdateMaterialsPricesCommand()).GetAwaiter().GetResult();
         }
     }
 }
